@@ -1,5 +1,6 @@
-#include "Application.h"
+#include "rpch.h"
 
+#include "Application.h"
 #include "Rhy/Events/ApplicationEvent.h"
 #include "Rhy/Log.h"
 

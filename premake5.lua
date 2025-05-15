@@ -17,6 +17,9 @@ project "Rhy"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "rpch.h"
+	pchsource "Rhy/src/rpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
