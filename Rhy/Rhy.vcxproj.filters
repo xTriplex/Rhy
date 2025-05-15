@@ -4,6 +4,9 @@
     <Filter Include="Rhy">
       <UniqueIdentifier>{981D880B-0427-887C-8DA2-9E7CF9AA937C}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rhy\Events">
+      <UniqueIdentifier>{7C8E314A-6846-7397-D14D-4CF3BD240E88}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Rhy.h" />
@@ -15,6 +18,18 @@
     </ClInclude>
     <ClInclude Include="src\Rhy\EntryPoint.h">
       <Filter>Rhy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rhy\Events\ApplicationEvent.h">
+      <Filter>Rhy\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rhy\Events\Event.h">
+      <Filter>Rhy\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rhy\Events\KeyEvent.h">
+      <Filter>Rhy\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rhy\Events\MouseEvent.h">
+      <Filter>Rhy\Events</Filter>
     </ClInclude>
     <ClInclude Include="src\Rhy\Log.h">
       <Filter>Rhy</Filter>
