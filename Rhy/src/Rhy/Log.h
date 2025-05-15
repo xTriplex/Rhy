@@ -38,6 +38,5 @@ namespace Rhy
 #define R_ERROR(...)         ::Rhy::Log::GetClientLogger()->error(__VA_ARGS__)
 #define R_CRITICAL(...)      ::Rhy::Log::GetClientLogger()->critical(__VA_ARGS__)
 
-// If distribution build
-#define R_CORE_INFO
+
 

@@ -1,12 +1,14 @@
 #pragma once
 #include <stdio.h>
 
-// For use by Rhy Applications only!
+/***********************************
+ *For use by Rhy Applications only!*
+ **********************************/
 #include "Rhy/Application.h"
 #include "Rhy/Log.h"
 
-/************
- *Entry Point
+/*************
+ *Entry Point*
  ************/
 #include "Rhy/EntryPoint.h"
 
