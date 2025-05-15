@@ -1,0 +1,3 @@
+[submodule "Rhy/vendor/spdlog"]
+	path = Rhy/vendor/spdlog
+	url = https://github.com/gabime/spdlog

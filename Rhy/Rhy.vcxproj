@@ -11,12 +11,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Rhy\Log.h" />
     <ClInclude Include="src\Rhy.h" />
     <ClInclude Include="src\Rhy\Application.h" />
     <ClInclude Include="src\Rhy\Core.h" />
     <ClInclude Include="src\Rhy\EntryPoint.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Rhy\Log.cpp" />
     <ClCompile Include="src\Rhy\Application.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
@@ -66,6 +68,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>R_PLATFORM_WINDOWS;R_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Rhy\vendor\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -80,6 +84,8 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>R_PLATFORM_WINDOWS;R_BUILD_DLL;_WINDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>$(SolutionDir)Rhy\vendor\spdlog\include;</AdditionalIncludeDirectories>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
