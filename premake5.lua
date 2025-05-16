@@ -10,10 +10,17 @@ workspace "Rhy"
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 
+-- Include directories relative to root folder --> $(SolutionDir)
+IncludeDir = {}
+IncludeDir["GLFW"] = "Rhy/vendor/GLFW/include"
+
+include "Rhy/vendor/GLFW"
+
 project "Rhy"
 	location "Rhy"
 	kind "SharedLib"
 	language "C++"
+	staticruntime "on"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("int/" .. outputdir .. "/%{prj.name}")
 
@@ -29,7 +36,14 @@ project "Rhy"
 	includedirs
 	{
 		"%{prj.name}/src",
-		 "%{prj.name}/vendor/spdlog/include"
+		"%{prj.name}/vendor/spdlog/include",
+		"%{IncludeDir.GLFW}"
+	}
+
+	links
+	{
+		"GLFW",
+		"opengl32.lib"
 	}
 
 	filter "system:windows"

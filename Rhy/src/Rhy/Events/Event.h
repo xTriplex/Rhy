@@ -6,12 +6,16 @@
 namespace Rhy
 {
 
-	/*************************************************************************
-	*Events in Rhy are currently blocking, meaning when an event occurs it****
-	*immediately gets dispatched and must be dealt with right then and there.*
-	*For the future, a better strategy might be to buffer events in an event**
-	*bus and process them during the "event" part of the update stage.********
-	*************************************************************************/
+	/******************************************************************************
+	 * The Rhy event system is currently synchronous: when an event occurs, it is
+	 * dispatched and handled immediately. This means event processing is blocking,
+	 * and must be completed before continuing execution.
+	 *
+	 * In the future, this could be improved by implementing an event queue or bus,
+	 * allowing events to be buffered and processed in batches during a dedicated
+	 * update phase. This would enable more flexible and decoupled event handling.
+	 ******************************************************************************/
+
 
 	enum class EventType
 	{
@@ -33,8 +37,8 @@ namespace Rhy
 	};
 
 #define EVENT_CLASS_TYPE(type) static EventType GetStaticType() { return EventType::##type; }\
-								virtual EventType GetEventType() const override { return GetStaticType(); }\
-								virtual const char* GetName() const override { return #type; }
+							   virtual EventType GetEventType() const override { return GetStaticType(); }\
+							   virtual const char* GetName() const override { return #type; }
 
 #define EVENT_CLASS_CATEGORY(category) virtual int GetCategoryFlags() const override { return category; }
 
@@ -61,9 +65,7 @@ namespace Rhy
 		using EventFn = std::function<bool(T&)>;
 	public:
 		EventDispatcher(Event& event)
-			: m_Event(event)
-		{
-		}
+			: m_Event(event){}
 
 		template<typename T>
 		bool Dispatch(EventFn<T> func)

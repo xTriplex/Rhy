@@ -1,3 +1,6 @@
 [submodule "Rhy/vendor/spdlog"]
 	path = Rhy/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+[submodule "Rhy/vendor/GLFW"]
+	path = Rhy/vendor/GLFW
+	url = https://github.com/TheCherno/glfw

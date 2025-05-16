@@ -10,5 +10,13 @@
 	#error Rhy only supports Windows!
 #endif
 
+#ifdef R_ENABLE_ASSERTS
+	#define R_ASSERT(x, ...) { if(!(x)) { R_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+	#define R_CORE_ASSERT(x, ...) { if(!(x)) { RR_CORE_ERROR("Assertion Failed: {0}", __VA_ARGS__); __debugbreak(); } }
+#else
+	#define R_ASSERT(x, ...)
+	#define R_CORE_ASSERT(x, ...)
+#endif
+
 #define BIT(x) (1 << x)
 
