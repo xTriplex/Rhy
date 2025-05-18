@@ -20,7 +20,7 @@ project "Rhy"
 	location "Rhy"
 	kind "SharedLib"
 	language "C++"
-	staticruntime "on"
+	staticruntime "off"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("int/" .. outputdir .. "/%{prj.name}")
 
@@ -48,7 +48,7 @@ project "Rhy"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "off"
 		systemversion "latest"
 
 		defines
@@ -64,14 +64,17 @@ project "Rhy"
 
 	filter "configurations:Debug"
 		defines "R_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "R_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "R_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter {"system:windows", "configurations:Release"}
@@ -110,7 +113,7 @@ project "Sandbox"
 
 	filter "system:windows"
 		cppdialect "C++17"
-		staticruntime "On"
+		staticruntime "off"
 		systemversion "latest"
 
 		defines
@@ -120,14 +123,17 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "R_DEBUG"
+		buildoptions "/MDd"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "R_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "R_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter {"system:windows", "configurations:Release"}

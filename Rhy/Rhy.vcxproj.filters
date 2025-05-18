@@ -40,6 +40,12 @@
     <ClInclude Include="src\Rhy\Events\MouseEvent.h">
       <Filter>Rhy\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Rhy\Layer.h">
+      <Filter>Rhy</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Rhy\LayerStack.h">
+      <Filter>Rhy</Filter>
+    </ClInclude>
     <ClInclude Include="src\Rhy\Log.h">
       <Filter>Rhy</Filter>
     </ClInclude>
@@ -53,6 +59,12 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Rhy\Application.cpp">
+      <Filter>Rhy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rhy\Layer.cpp">
+      <Filter>Rhy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rhy\LayerStack.cpp">
       <Filter>Rhy</Filter>
     </ClCompile>
     <ClCompile Include="src\Rhy\Log.cpp">
