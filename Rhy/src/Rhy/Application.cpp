@@ -4,7 +4,7 @@
 #include "Rhy/Events/ApplicationEvent.h"
 #include "Rhy/Log.h"
 
-#include "GLFW/glfw3.h"
+#include <glad/glad.h>
 
 namespace Rhy
 {
