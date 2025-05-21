@@ -7,6 +7,7 @@
 #include "Rhy/Application.h"
 #include "Rhy/Layer.h"
 #include "Rhy/Log.h"
+#include "Rhy/ImGui/ImGuiLayer.h"
 
 /*************
  *Entry Point*

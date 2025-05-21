@@ -53,6 +53,8 @@
       <Filter>Rhy</Filter>
     </ClInclude>
     <ClInclude Include="src\rpch.h" />
+    <ClInclude Include="src\Rhy\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
@@ -71,5 +73,7 @@
       <Filter>Rhy</Filter>
     </ClCompile>
     <ClCompile Include="src\rpch.cpp" />
+    <ClCompile Include="src\Rhy\ImGui\ImGuiLayer.cpp" />
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
   </ItemGroup>
 </Project>
