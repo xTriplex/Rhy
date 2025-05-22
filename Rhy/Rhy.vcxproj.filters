@@ -4,6 +4,9 @@
     <Filter Include="Platform">
       <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform\OpenGL">
+      <UniqueIdentifier>{1E7D2C1D-8A08-9AE1-9319-1DD6FF23F6E1}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Platform\Windows">
       <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
     </Filter>
@@ -13,8 +16,14 @@
     <Filter Include="Rhy\Events">
       <UniqueIdentifier>{7C8E314A-6846-7397-D14D-4CF3BD240E88}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Rhy\ImGui">
+      <UniqueIdentifier>{C2640612-2ECF-BA88-770D-6C2EE3B698DD}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h">
+      <Filter>Platform\OpenGL</Filter>
+    </ClInclude>
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
       <Filter>Platform\Windows</Filter>
     </ClInclude>
@@ -40,6 +49,9 @@
     <ClInclude Include="src\Rhy\Events\MouseEvent.h">
       <Filter>Rhy\Events</Filter>
     </ClInclude>
+    <ClInclude Include="src\Rhy\ImGui\ImGuiLayer.h">
+      <Filter>Rhy\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Rhy\Layer.h">
       <Filter>Rhy</Filter>
     </ClInclude>
@@ -53,15 +65,19 @@
       <Filter>Rhy</Filter>
     </ClInclude>
     <ClInclude Include="src\rpch.h" />
-    <ClInclude Include="src\Rhy\ImGui\ImGuiLayer.h" />
-    <ClInclude Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
+      <Filter>Platform\OpenGL</Filter>
+    </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\Rhy\Application.cpp">
       <Filter>Rhy</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Rhy\ImGui\ImGuiLayer.cpp">
+      <Filter>Rhy\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Rhy\Layer.cpp">
       <Filter>Rhy</Filter>
@@ -73,7 +89,5 @@
       <Filter>Rhy</Filter>
     </ClCompile>
     <ClCompile Include="src\rpch.cpp" />
-    <ClCompile Include="src\Rhy\ImGui\ImGuiLayer.cpp" />
-    <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
   </ItemGroup>
 </Project>

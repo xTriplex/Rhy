@@ -20,6 +20,8 @@ include "Rhy/vendor/GLFW"
 include "Rhy/vendor/Glad"
 include "Rhy/vendor/imgui"
 
+startproject = "Sandbox"
+
 project "Rhy"
 	location "Rhy"
 	kind "SharedLib"
@@ -65,6 +67,7 @@ project "Rhy"
 			"R_PLATFORM_WINDOWS",
 			"R_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
+
 		}
 		
 		postbuildcommands
@@ -74,17 +77,17 @@ project "Rhy"
 
 	filter "configurations:Debug"
 		defines "R_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "R_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "R_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter {"system:windows", "configurations:Release"}
@@ -101,6 +104,7 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
+	staticruntime "off"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("int/" .. outputdir .. "/%{prj.name}")
 
@@ -133,17 +137,17 @@ project "Sandbox"
 
 	filter "configurations:Debug"
 		defines "R_DEBUG"
-		buildoptions "/MDd"
+		runtime "Debug"
 		symbols "On"
 
 	filter "configurations:Release"
 		defines "R_RELEASE"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "R_DIST"
-		buildoptions "/MD"
+		runtime "Release"
 		optimize "On"
 
 	filter {"system:windows", "configurations:Release"}
