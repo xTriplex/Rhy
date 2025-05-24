@@ -39,6 +39,9 @@ namespace Rhy {
 		virtual void SetVSync(bool enabled) = 0;
 		virtual bool IsVSync() const = 0;
 
+        // Returns a void(typeless) pointer to the underlying native window handle (e.g., GLFWwindow* or HWND)
+        virtual void* GetNativeWindow() const = 0;
+
 		static Window* Create(const WindowProps& props = WindowProps());
 	};
 

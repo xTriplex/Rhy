@@ -95,7 +95,7 @@
       <ImportLibrary>..\bin\Debug-windows-x86_64\Rhy\Rhy.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Rhy\Rhy.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Rhy\Rhy.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Rhy\Rhy.dll ..\bin\Debug-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Debug-windows-x86_64\Rhy\Rhy.dll\ (xcopy /Q /E /Y /I ..\bin\Debug-windows-x86_64\Rhy\Rhy.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Debug-windows-x86_64\Rhy\Rhy.dll "..\bin\Debug-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -123,7 +123,7 @@
       <ImportLibrary>..\bin\Release-windows-x86_64\Rhy\Rhy.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Release-windows-x86_64\Rhy\Rhy.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Rhy\Rhy.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Rhy\Rhy.dll ..\bin\Release-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Release-windows-x86_64\Rhy\Rhy.dll\ (xcopy /Q /E /Y /I ..\bin\Release-windows-x86_64\Rhy\Rhy.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Release-windows-x86_64\Rhy\Rhy.dll "..\bin\Release-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Dist|x64'">
@@ -151,7 +151,7 @@
       <ImportLibrary>..\bin\Dist-windows-x86_64\Rhy\Rhy.lib</ImportLibrary>
     </Link>
     <PostBuildEvent>
-      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Rhy\Rhy.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Rhy\Rhy.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Rhy\Rhy.dll ..\bin\Dist-windows-x86_64\Sandbox &gt; nul)</Command>
+      <Command>IF EXIST ..\bin\Dist-windows-x86_64\Rhy\Rhy.dll\ (xcopy /Q /E /Y /I ..\bin\Dist-windows-x86_64\Rhy\Rhy.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul) ELSE (xcopy /Q /Y /I ..\bin\Dist-windows-x86_64\Rhy\Rhy.dll "..\bin\Dist-windows-x86_64\Sandbox\" &gt; nul)</Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
@@ -166,11 +166,13 @@
     <ClInclude Include="src\Rhy\Events\KeyEvent.h" />
     <ClInclude Include="src\Rhy\Events\MouseEvent.h" />
     <ClInclude Include="src\Rhy\ImGui\ImGuiLayer.h" />
+    <ClInclude Include="src\Rhy\Input.h" />
     <ClInclude Include="src\Rhy\Layer.h" />
     <ClInclude Include="src\Rhy\LayerStack.h" />
     <ClInclude Include="src\Rhy\Log.h" />
     <ClInclude Include="src\Rhy\Window.h" />
     <ClInclude Include="src\rpch.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp" />
@@ -183,6 +185,7 @@
     <ClCompile Include="src\rpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\GLFW\GLFW.vcxproj">

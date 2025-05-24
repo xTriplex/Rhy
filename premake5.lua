@@ -1,5 +1,6 @@
 workspace "Rhy"
 	architecture "x64"
+	startproject = "Sandbox"	
 
 	configurations
 	{
@@ -16,11 +17,12 @@ IncludeDir["GLFW"] = "Rhy/vendor/GLFW/include"
 IncludeDir["Glad"] = "Rhy/vendor/Glad/include"
 IncludeDir["ImGui"] = "Rhy/vendor/imgui"
 
-include "Rhy/vendor/GLFW"
-include "Rhy/vendor/Glad"
-include "Rhy/vendor/imgui"
 
-startproject = "Sandbox"
+group "Dependencies"
+	include "Rhy/vendor/GLFW"
+	include "Rhy/vendor/Glad"
+	include "Rhy/vendor/imgui"
+group ""
 
 project "Rhy"
 	location "Rhy"
@@ -67,12 +69,11 @@ project "Rhy"
 			"R_PLATFORM_WINDOWS",
 			"R_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
-
 		}
 		
 		postbuildcommands
 		{
-			("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/Sandbox")
+			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
 		}
 
 	filter "configurations:Debug"

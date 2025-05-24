@@ -6,6 +6,8 @@
 
 #include <glad/glad.h>
 
+#include "Input.h"
+
 namespace Rhy
 {
 #define BIND_EVENT_FUNCTION(x) std::bind(&x, this, std::placeholders::_1)
@@ -36,6 +38,9 @@ namespace Rhy
 			{
 				layer->OnUpdate();
 			}
+
+			auto [x, y] = Input::GetMousePosition();
+			R_CORE_TRACE("{0}, {1}", x, y);
 
 			m_Window->OnUpdate();
 		}

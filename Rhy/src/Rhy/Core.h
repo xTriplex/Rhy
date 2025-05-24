@@ -22,7 +22,8 @@
 	#define R_CORE_ASSERT(x, ...)
 #endif
 
-#define BIT(x) (1 << x)
+#define BIT(x) (1 << (x))
 
 #define R_BIND_EVENT_FUNCTION(fn) std::bind(&fn, this, std::placeholders::_1)
+
 
