@@ -1,5 +1,7 @@
 #include <Rhy.h>
 
+#include "Rhy/Events/KeyEvent.h"
+
 class ExampleLayer : public Rhy::Layer
 
 {
@@ -10,12 +12,20 @@ public:
 
 	void OnUpdate() override
 	{
-		R_INFO("ExampleLayer::Update");
+		// R_INFO("ExampleLayer::Update");
+		if (Rhy::Input::IsKeyPressed(R_KEY_TAB))
+		{
+			R_TRACE("Tab key was pressed!");
+		}
 	}
 
 	void OnEvent(Rhy::Event& event) override
 	{
-		R_TRACE("{0}", event);
+		if (event.GetEventType() == Rhy::EventType::KeyPressed)
+		{
+			Rhy::KeyPressedEvent& e = (Rhy::KeyPressedEvent&)event;
+			R_TRACE("{0}", (char)e.GetKeyCode());
+		}
 	}
 };
 

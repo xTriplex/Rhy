@@ -7,6 +7,12 @@
 #include "Rhy/Application.h"
 #include "Rhy/Layer.h"
 #include "Rhy/Log.h"
+
+#include "Rhy/Input.h"
+#include "Rhy/KeyCodes.h"
+#include "Rhy/MouseButtonCodes.h"
+
+
 #include "Rhy/ImGui/ImGuiLayer.h"
 
 /*************

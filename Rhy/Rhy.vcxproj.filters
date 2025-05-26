@@ -65,6 +65,10 @@
       <Filter>Rhy</Filter>
     </ClInclude>
     <ClInclude Include="src\rpch.h" />
+    <ClInclude Include="src\Rhy\Input.h" />
+    <ClInclude Include="src\Platform\Windows\WindowsInput.h" />
+    <ClInclude Include="src\Rhy\KeyCodes.h" />
+    <ClInclude Include="src\Rhy\MouseButtonCodes.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Platform\OpenGL\ImGuiOpenGLRenderer.cpp">
@@ -89,5 +93,6 @@
       <Filter>Rhy</Filter>
     </ClCompile>
     <ClCompile Include="src\rpch.cpp" />
+    <ClCompile Include="src\Platform\Windows\WindowsInput.cpp" />
   </ItemGroup>
 </Project>
