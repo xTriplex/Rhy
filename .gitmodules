@@ -7,3 +7,6 @@
 [submodule "Rhy/vendor/imgui"]
 	path = Rhy/vendor/imgui
 	url = https://github.com/TheCherno/imgui
+[submodule "Rhy/vendor/glm"]
+	path = Rhy/vendor/glm
+	url = https://github.com/g-truc/glm
