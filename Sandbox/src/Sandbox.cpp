@@ -1,6 +1,6 @@
 #include <Rhy.h>
 
-#include "Rhy/Events/KeyEvent.h"
+#include "imgui/imgui.h"
 
 class ExampleLayer : public Rhy::Layer
 
@@ -19,6 +19,13 @@ public:
 		}
 	}
 
+	void OnImGuiRender() override
+	{
+		ImGui::Begin("Test");
+		ImGui::Text("Hey!");
+		ImGui::End();
+	}
+
 	void OnEvent(Rhy::Event& event) override
 	{
 		if (event.GetEventType() == Rhy::EventType::KeyPressed)
@@ -35,7 +42,6 @@ public:
 	Sandbox()
 	{
 		PushLayer(new ExampleLayer());
-		PushOverlay(new Rhy::ImGuiLayer());
 	}
 
 	~Sandbox()

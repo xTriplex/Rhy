@@ -10,6 +10,7 @@
 
 #include "Rhy/Input.h"
 #include "Rhy/KeyCodes.h"
+#include "Rhy/Events/KeyEvent.h"
 #include "Rhy/MouseButtonCodes.h"
 
 

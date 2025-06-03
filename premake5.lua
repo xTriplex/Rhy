@@ -27,9 +27,10 @@ group ""
 
 project "Rhy"
 	location "Rhy"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("int/" .. outputdir .. "/%{prj.name}")
 
@@ -42,6 +43,11 @@ project "Rhy"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl"
+	}
+
+	defines
+	{
+		"_CRT_SECURE_NO_WARNINGS"
 	}
 
 	includedirs
@@ -64,8 +70,6 @@ project "Rhy"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "off"
 		systemversion "latest"
 
 		defines
@@ -74,26 +78,21 @@ project "Rhy"
 			"R_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
-		
-		postbuildcommands
-		{
-			("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/Sandbox/\"")
-		}
 
 	filter "configurations:Debug"
 		defines "R_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "R_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "R_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter {"system:windows", "configurations:Release"}
 		buildoptions "/utf-8"
@@ -109,7 +108,8 @@ project "Sandbox"
 	location "Sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "off"
+	cppdialect "C++17"
+	staticruntime "on"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("int/" .. outputdir .. "/%{prj.name}")
 
@@ -123,6 +123,7 @@ project "Sandbox"
 	{
 		 "Rhy/vendor/spdlog/include",
 		 "Rhy/src",
+		 "Rhy/vendor",
 		 "%{IncludeDir.glm}"
 	}
 
@@ -132,8 +133,6 @@ project "Sandbox"
 	}
 
 	filter "system:windows"
-		cppdialect "C++17"
-		staticruntime "off"
 		systemversion "latest"
 
 		defines
@@ -144,17 +143,17 @@ project "Sandbox"
 	filter "configurations:Debug"
 		defines "R_DEBUG"
 		runtime "Debug"
-		symbols "On"
+		symbols "on"
 
 	filter "configurations:Release"
 		defines "R_RELEASE"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter "configurations:Dist"
 		defines "R_DIST"
 		runtime "Release"
-		optimize "On"
+		optimize "on"
 
 	filter {"system:windows", "configurations:Release"}
 		buildoptions "/utf-8"

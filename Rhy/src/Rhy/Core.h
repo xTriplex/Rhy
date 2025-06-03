@@ -1,11 +1,15 @@
 #pragma once
 
 #ifdef R_PLATFORM_WINDOWS
+#if R_DYNAMIC_LINK
 	#ifdef R_BUILD_DLL
 		#define RHY_API __declspec(dllexport)
 	#else
 		#define RHY_API __declspec(dllimport)
 	#endif
+#else
+	#define RHY_API
+#endif
 #else
 	#error Rhy only supports Windows!
 #endif

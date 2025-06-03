@@ -8,6 +8,7 @@
 
 namespace Rhy
 {
+	class ImGuiLayer;
 	class WindowCloseEvent;
 
 	class RHY_API Application
@@ -27,6 +28,7 @@ namespace Rhy
 	private:
 		bool OnWindowClose(WindowCloseEvent& e);
 		std::unique_ptr<Window> m_Window;
+		ImGuiLayer* m_ImGuiLayer;
 		bool m_Running = true;
 		LayerStack m_LayerStack;
 
