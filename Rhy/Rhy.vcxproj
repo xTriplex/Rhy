@@ -165,6 +165,7 @@
     <ClInclude Include="src\Rhy\Log.h" />
     <ClInclude Include="src\Rhy\MouseButtonCodes.h" />
     <ClInclude Include="src\Rhy\Renderer\GraphicsContext.h" />
+    <ClInclude Include="src\Rhy\Renderer\Shader.h" />
     <ClInclude Include="src\Rhy\Window.h" />
     <ClInclude Include="src\rpch.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
@@ -596,6 +597,7 @@
     <ClCompile Include="src\Rhy\Layer.cpp" />
     <ClCompile Include="src\Rhy\LayerStack.cpp" />
     <ClCompile Include="src\Rhy\Log.cpp" />
+    <ClCompile Include="src\Rhy\Renderer\Shader.cpp" />
     <ClCompile Include="src\rpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
