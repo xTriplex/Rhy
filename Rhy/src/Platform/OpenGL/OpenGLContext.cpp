@@ -17,13 +17,12 @@ namespace Rhy
 		glfwMakeContextCurrent(m_WindowHandle);
 		int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
 		R_CORE_ASSERT(status, "Failed to initialize GLAD!!!");
+
+		R_CORE_INFO("OpenGL Renderer: {0}", (const char*)glGetString(GL_RENDERER));
 	}
 
 	void OpenGLContext::SwapBuffers()
 	{
-		glBegin(GL_TRIANGLES);
-
-		glEnd();
 		glfwSwapBuffers(m_WindowHandle);
 	}
 }
