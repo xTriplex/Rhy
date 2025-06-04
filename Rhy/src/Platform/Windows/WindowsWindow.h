@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Rhy/Window.h"
-#include <GLFW/glfw3.h>
+#include "Rhy/Renderer/GraphicsContext.h"
 
+#include <GLFW/glfw3.h>
 
 namespace Rhy
 {
@@ -29,6 +30,7 @@ namespace Rhy
 		virtual void Shutdown();
 	private:
 		GLFWwindow* m_Window;
+		GraphicsContext* m_Context;
 
 		struct WindowData
 		{
@@ -41,5 +43,4 @@ namespace Rhy
 
 		WindowData m_Data;
 	};
-
 }
